@@ -7,7 +7,6 @@
     "start": "node douscrm.js",
     "build": "webpack -w",
     "test": "istanbul cover ./node_modules/mocha/bin/_mocha --async-only --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "test2": "istanbul cover ./node_modules/mocha/bin/_mocha --async-only --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "eslint .; exit 0",
     "check": "npm run lint;npm run test"
   },
