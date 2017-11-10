@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node douscrm.js",
     "build": "webpack -w",
-    "test": "istanbul cover ./node_modules/mocha/bin/_mocha --async-only --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test": "nyc --all --exclude \"public/*\" --reporter=lcov ./node_modules/mocha/bin/_mocha --no-timeouts --async-only --colors && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "lint": "eslint .; exit 0",
     "check": "npm run lint;npm run test"
   },
@@ -43,6 +43,7 @@
     "eslint-plugin-react": "^7.4.0",
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
     "webpack": "^3.8.1"
   }
 }
