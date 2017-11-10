@@ -7,6 +7,7 @@
     "start": "node douscrm.js",
     "build": "webpack -w",
     "test": "istanbul cover ./node_modules/mocha/bin/_mocha --async-only --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test2": "istanbul cover ./node_modules/mocha/bin/_mocha --async-only --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "eslint .; exit 0",
     "check": "npm run lint;npm run test"
   },
@@ -38,6 +39,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "coveralls": "^3.0.0",
     "eslint": "^4.10.0",
     "eslint-plugin-react": "^7.4.0",
     "istanbul": "^0.4.5",
