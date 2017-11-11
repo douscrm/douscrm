@@ -29475,15 +29475,15 @@ class Login extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__globals__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sections_dashboards_dashboard__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sections_contacts_list__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__sections_business_list__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sections_leads_list__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sections_oportunities_list__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sections_projects_list__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sections_tasks_list__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__sections_calendar_calendar__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__sections_reports_list__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sections_dashboards_dashboard__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sections_contacts_list__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__sections_business_list__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sections_leads_list__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sections_oportunities_list__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sections_projects_list__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sections_tasks_list__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__sections_calendar_calendar__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__sections_reports_list__ = __webpack_require__(152);
 
 
 
@@ -29659,6 +29659,159 @@ class Admin extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_card__ = __webpack_require__(153);
+
+
+
+
+class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+			'div',
+			{ className: 'container' },
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				{ className: 'row' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'col-12' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'h1',
+						null,
+						'Dashboard'
+					)
+				)
+			),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				{ className: 'row' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'col-12' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						__WEBPACK_IMPORTED_MODULE_2__components_card__["a" /* default */],
+						{ title: 'prueba' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'table',
+							{ 'class': 'table' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'thead',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Task'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Date'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Project'
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'tbody',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'row' },
+										'1'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/tasks/${1}` },
+											'Task 1'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'2017-11-11'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'row' },
+										'2'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/tasks/${2}` },
+											'Task 2'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'2017-11-12'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'row' },
+										'3'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/tasks/${3}` },
+											'Task 3'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'2017-11-13'
+									)
+								)
+							)
+						)
+					)
+				)
+			)
+		);
+	}
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Dashboard);
+
+/***/ }),
+/* 145 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
 class ContactList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
@@ -29690,7 +29843,7 @@ class ContactList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony default export */ __webpack_exports__["a"] = (ContactList);
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29727,7 +29880,7 @@ class BusinessList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony default export */ __webpack_exports__["a"] = (BusinessList);
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29764,7 +29917,7 @@ class LeadList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony default export */ __webpack_exports__["a"] = (LeadList);
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29801,7 +29954,7 @@ class OportunityList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony default export */ __webpack_exports__["a"] = (OportunityList);
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29838,7 +29991,7 @@ class ProjectList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony default export */ __webpack_exports__["a"] = (ProjectList);
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29875,7 +30028,7 @@ class TaskList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony default export */ __webpack_exports__["a"] = (TaskList);
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29912,7 +30065,7 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony default export */ __webpack_exports__["a"] = (Calendar);
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29949,7 +30102,7 @@ class ReportList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony default export */ __webpack_exports__["a"] = (ReportList);
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29957,33 +30110,42 @@ class ReportList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
-class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
+class Card extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 	constructor(props) {
 		super(props);
 	}
 
 	render() {
+		let noGutters = this.props.noGutters || false;
+		let className = ['card'];
+
+		if (this.props.className) {
+			className.push(this.props.className);
+		}
+
+		let children = this.props.children;
+		if (this.props.padding) {
+			children = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				"div",
+				{ "class": "card-body no-gutters" },
+				this.props.children
+			);
+		}
+
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			"div",
-			{ className: "container" },
+			{ "class": className.join(' ') },
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				"div",
-				{ className: "row" },
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"div",
-					{ className: "col-12" },
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						"h1",
-						null,
-						"Dashboard"
-					)
-				)
-			)
+				"h4",
+				{ "class": "card-header" },
+				this.props.title
+			),
+			children
 		);
 	}
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (Dashboard);
+/* harmony default export */ __webpack_exports__["a"] = (Card);
 
 /***/ })
 /******/ ]);
