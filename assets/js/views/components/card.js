@@ -22,8 +22,8 @@ class Card extends Component {
 			children = <div class="card-body no-gutters">{this.props.children}</div>
 		}
 
-		return (<div class={className.join(' ')}>
-			<h4 class="card-header">{this.props.title}</h4>
+		return (<div className={className.join(' ')}>
+			<h4 className="card-header">{this.props.title}</h4>
 			{children}
 		</div>);
 	}

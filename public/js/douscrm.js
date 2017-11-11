@@ -30134,10 +30134,10 @@ class Card extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			"div",
-			{ "class": className.join(' ') },
+			{ className: className.join(' ') },
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				"h4",
-				{ "class": "card-header" },
+				{ className: "card-header" },
 				this.props.title
 			),
 			children
