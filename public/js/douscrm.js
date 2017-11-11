@@ -30127,7 +30127,7 @@ class Card extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 		if (this.props.padding) {
 			children = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				"div",
-				{ "class": "card-body no-gutters" },
+				{ className: "card-body no-gutters" },
 				this.props.children
 			);
 		}

@@ -19,7 +19,7 @@ class Card extends Component {
 
 		let children = this.props.children;
 		if(this.props.padding) {
-			children = <div class="card-body no-gutters">{this.props.children}</div>
+			children = <div className="card-body no-gutters">{this.props.children}</div>
 		}
 
 		return (<div className={className.join(' ')}>
