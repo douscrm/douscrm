@@ -29729,11 +29729,6 @@ class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 									'tr',
 									null,
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'th',
-										{ scope: 'row' },
-										'1'
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 										'td',
 										null,
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -29746,16 +29741,20 @@ class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 										'td',
 										null,
 										'2017-11-11'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/projects/${1}` },
+											'Demo project'
+										)
 									)
 								),
 								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 									'tr',
 									null,
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'th',
-										{ scope: 'row' },
-										'2'
-									),
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 										'td',
 										null,
@@ -29769,16 +29768,20 @@ class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 										'td',
 										null,
 										'2017-11-12'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/projects/${1}` },
+											'Demo project'
+										)
 									)
 								),
 								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 									'tr',
 									null,
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'th',
-										{ scope: 'row' },
-										'3'
-									),
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 										'td',
 										null,
@@ -29792,6 +29795,15 @@ class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 										'td',
 										null,
 										'2017-11-13'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/projects/${1}` },
+											'Demo project'
+										)
 									)
 								)
 							)
@@ -29812,6 +29824,10 @@ class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_card__ = __webpack_require__(153);
+
+
 
 
 class ContactList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
@@ -29821,18 +29837,130 @@ class ContactList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
 	render() {
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-			"div",
-			{ className: "container" },
+			'div',
+			{ className: 'container' },
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				"div",
-				{ className: "row" },
+				'div',
+				{ className: 'row' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"div",
-					{ className: "col-12" },
+					'div',
+					{ className: 'col-12' },
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						"h1",
+						'h1',
 						null,
-						"ContactList"
+						'ContactList'
+					)
+				)
+			),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				{ className: 'row' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'col-12' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						__WEBPACK_IMPORTED_MODULE_2__components_card__["a" /* default */],
+						{ title: 'prueba' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'table',
+							{ className: 'table' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'thead',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Name'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Phone'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Email'
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'tbody',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/contacts/${1}` },
+											'John Doe'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'202-555-0180'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'john.doe@fake.com'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/contacts/${2}` },
+											'Glen Bishop'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'202-555-0162'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'glen.bishop@fake.com'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/contacts/${3}` },
+											'Richard McCoy'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'202-555-0193'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'richard.mccoy@fake.com'
+									)
+								)
+							)
+						)
 					)
 				)
 			)
@@ -29849,6 +29977,10 @@ class ContactList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_card__ = __webpack_require__(153);
+
+
 
 
 class BusinessList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
@@ -29858,18 +29990,130 @@ class BusinessList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
 	render() {
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-			"div",
-			{ className: "container" },
+			'div',
+			{ className: 'container' },
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				"div",
-				{ className: "row" },
+				'div',
+				{ className: 'row' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"div",
-					{ className: "col-12" },
+					'div',
+					{ className: 'col-12' },
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						"h1",
+						'h1',
 						null,
-						"BusinessList"
+						'BusinessList'
+					)
+				)
+			),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				{ className: 'row' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'col-12' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						__WEBPACK_IMPORTED_MODULE_2__components_card__["a" /* default */],
+						{ title: 'prueba' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'table',
+							{ className: 'table' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'thead',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Name'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Phone'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Email'
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'tbody',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/business/${1}` },
+											'Factory 1'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'202-555-0180'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'info@factory1.com'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/business/${2}` },
+											'Business 2'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'202-555-0162'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'info@business2.com'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/business/${3}` },
+											'Enterprise 3'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'202-555-0193'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'info@enterprise3.com'
+									)
+								)
+							)
+						)
 					)
 				)
 			)
@@ -29886,6 +30130,10 @@ class BusinessList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_card__ = __webpack_require__(153);
+
+
 
 
 class LeadList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
@@ -29895,18 +30143,130 @@ class LeadList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
 	render() {
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-			"div",
-			{ className: "container" },
+			'div',
+			{ className: 'container' },
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				"div",
-				{ className: "row" },
+				'div',
+				{ className: 'row' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"div",
-					{ className: "col-12" },
+					'div',
+					{ className: 'col-12' },
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						"h1",
+						'h1',
 						null,
-						"LeadList"
+						'LeadList'
+					)
+				)
+			),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				{ className: 'row' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'col-12' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						__WEBPACK_IMPORTED_MODULE_2__components_card__["a" /* default */],
+						{ title: 'prueba' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'table',
+							{ className: 'table' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'thead',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Name'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Phone'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Email'
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'tbody',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/leads/${1}` },
+											'John Doe'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'202-555-0180'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'john.doe@fake.com'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/leads/${2}` },
+											'Glen Bishop'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'202-555-0162'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'glen.bishop@fake.com'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/leads/${3}` },
+											'Richard McCoy'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'202-555-0193'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'richard.mccoy@fake.com'
+									)
+								)
+							)
+						)
 					)
 				)
 			)
@@ -29923,6 +30283,10 @@ class LeadList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_card__ = __webpack_require__(153);
+
+
 
 
 class OportunityList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
@@ -29932,18 +30296,142 @@ class OportunityList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
 	render() {
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-			"div",
-			{ className: "container" },
+			'div',
+			{ className: 'container' },
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				"div",
-				{ className: "row" },
+				'div',
+				{ className: 'row' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"div",
-					{ className: "col-12" },
+					'div',
+					{ className: 'col-12' },
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						"h1",
+						'h1',
 						null,
-						"OportunityList"
+						'OportunityList'
+					)
+				)
+			),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				{ className: 'row' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'col-12' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						__WEBPACK_IMPORTED_MODULE_2__components_card__["a" /* default */],
+						{ title: 'prueba' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'table',
+							{ className: 'table' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'thead',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Name'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Business'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Status'
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'tbody',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/oportunities/${1}` },
+											'Oportunity 1'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/business/${1}` },
+											'Factory 1'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'Win'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/oportunities/${2}` },
+											'Oportunity 2'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/business/${2}` },
+											'Business 2'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'Lose'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/oportunities/${3}` },
+											'Oportunity 3'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/business/${3}` },
+											'Enterprise 3'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'Pending'
+									)
+								)
+							)
+						)
 					)
 				)
 			)
@@ -29960,6 +30448,10 @@ class OportunityList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_card__ = __webpack_require__(153);
+
+
 
 
 class ProjectList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
@@ -29969,18 +30461,142 @@ class ProjectList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
 	render() {
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-			"div",
-			{ className: "container" },
+			'div',
+			{ className: 'container' },
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				"div",
-				{ className: "row" },
+				'div',
+				{ className: 'row' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"div",
-					{ className: "col-12" },
+					'div',
+					{ className: 'col-12' },
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						"h1",
+						'h1',
 						null,
-						"ProjectList"
+						'ProjectList'
+					)
+				)
+			),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				{ className: 'row' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'col-12' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						__WEBPACK_IMPORTED_MODULE_2__components_card__["a" /* default */],
+						{ title: 'prueba' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'table',
+							{ className: 'table' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'thead',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Name'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Business'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Status'
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'tbody',
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/projects/${1}` },
+											'Project 1'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/business/${1}` },
+											'Factory 1'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'Open'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/projects/${2}` },
+											'Project 2'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/business/${2}` },
+											'Business 2'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'Close'
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'tr',
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/projects/${3}` },
+											'Project 3'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										{ scope: 'row' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/business/${3}` },
+											'Enterprise 3'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										'Open'
+									)
+								)
+							)
+						)
 					)
 				)
 			)
@@ -29997,6 +30613,10 @@ class ProjectList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_card__ = __webpack_require__(153);
+
+
 
 
 class TaskList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
@@ -30006,126 +30626,138 @@ class TaskList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
 	render() {
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-			"div",
-			{ className: "container" },
+			'div',
+			{ className: 'container' },
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				"div",
-				{ className: "row" },
+				'div',
+				{ className: 'row' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"div",
-					{ className: "col-12" },
+					'div',
+					{ className: 'col-12' },
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						"h1",
+						'h1',
 						null,
-						"TaskList"
+						'TaskList'
 					)
 				)
 			),
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				"div",
-				{ className: "row" },
+				'div',
+				{ className: 'row' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"div",
-					{ className: "col-12" },
+					'div',
+					{ className: 'col-12' },
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						Card,
-						{ title: "prueba" },
+						__WEBPACK_IMPORTED_MODULE_2__components_card__["a" /* default */],
+						{ title: 'prueba' },
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-							"table",
-							{ className: "table" },
+							'table',
+							{ className: 'table' },
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"thead",
+								'thead',
 								null,
 								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									"tr",
+									'tr',
 									null,
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"th",
-										{ scope: "col" },
-										"Task"
+										'th',
+										{ scope: 'col' },
+										'Task'
 									),
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"th",
-										{ scope: "col" },
-										"Date"
+										'th',
+										{ scope: 'col' },
+										'Date'
 									),
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"th",
-										{ scope: "col" },
-										"Project"
+										'th',
+										{ scope: 'col' },
+										'Project'
 									)
 								)
 							),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"tbody",
+								'tbody',
 								null,
 								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									"tr",
+									'tr',
 									null,
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"th",
-										{ scope: "row" },
-										"1"
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"td",
+										'td',
 										null,
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-											Link,
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
 											{ to: `/tasks/${1}` },
-											"Task 1"
+											'Task 1'
 										)
 									),
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"td",
+										'td',
 										null,
-										"2017-11-11"
+										'2017-11-11'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/projects/${1}` },
+											'Demo project'
+										)
 									)
 								),
 								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									"tr",
+									'tr',
 									null,
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"th",
-										{ scope: "row" },
-										"2"
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"td",
+										'td',
 										null,
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-											Link,
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
 											{ to: `/tasks/${2}` },
-											"Task 2"
+											'Task 2'
 										)
 									),
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"td",
+										'td',
 										null,
-										"2017-11-12"
+										'2017-11-12'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/projects/${1}` },
+											'Demo project'
+										)
 									)
 								),
 								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									"tr",
+									'tr',
 									null,
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"th",
-										{ scope: "row" },
-										"3"
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"td",
+										'td',
 										null,
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-											Link,
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
 											{ to: `/tasks/${3}` },
-											"Task 3"
+											'Task 3'
 										)
 									),
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										"td",
+										'td',
 										null,
-										"2017-11-13"
+										'2017-11-13'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'td',
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+											{ to: `/projects/${1}` },
+											'Demo project'
+										)
 									)
 								)
 							)

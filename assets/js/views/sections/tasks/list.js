@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import {Link} from 'react-router-dom';
+import Card from '../../components/card';
 
 
 
@@ -29,19 +31,19 @@ class TaskList extends Component {
 							</thead>
 							<tbody>
 								<tr>
-									<th scope="row">1</th>
 									<td><Link to={`/tasks/${1}`}>Task 1</Link></td>
 									<td>2017-11-11</td>
+									<td><Link to={`/projects/${1}`}>Demo project</Link></td>
 								</tr>
 								<tr>
-									<th scope="row">2</th>
 									<td><Link to={`/tasks/${2}`}>Task 2</Link></td>
 									<td>2017-11-12</td>
+									<td><Link to={`/projects/${1}`}>Demo project</Link></td>
 								</tr>
 								<tr>
-									<th scope="row">3</th>
 									<td><Link to={`/tasks/${3}`}>Task 3</Link></td>
 									<td>2017-11-13</td>
+									<td><Link to={`/projects/${1}`}>Demo project</Link></td>
 								</tr>
 							</tbody>
 						</table>
