@@ -21,7 +21,7 @@ class Dashboard extends Component {
 			<div className="row">
 				<div className="col-12">
 					<Card title="prueba">
-						<table class="table">
+						<table className="table">
 							<thead>
 								<tr>
 									<th scope="col">Task</th>
