@@ -30020,6 +30020,118 @@ class TaskList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 						"TaskList"
 					)
 				)
+			),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				"div",
+				{ className: "row" },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					"div",
+					{ className: "col-12" },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						Card,
+						{ title: "prueba" },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							"table",
+							{ className: "table" },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								"thead",
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									"tr",
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"th",
+										{ scope: "col" },
+										"Task"
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"th",
+										{ scope: "col" },
+										"Date"
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"th",
+										{ scope: "col" },
+										"Project"
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								"tbody",
+								null,
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									"tr",
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"th",
+										{ scope: "row" },
+										"1"
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"td",
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											Link,
+											{ to: `/tasks/${1}` },
+											"Task 1"
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"td",
+										null,
+										"2017-11-11"
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									"tr",
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"th",
+										{ scope: "row" },
+										"2"
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"td",
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											Link,
+											{ to: `/tasks/${2}` },
+											"Task 2"
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"td",
+										null,
+										"2017-11-12"
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									"tr",
+									null,
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"th",
+										{ scope: "row" },
+										"3"
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"td",
+										null,
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											Link,
+											{ to: `/tasks/${3}` },
+											"Task 3"
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										"td",
+										null,
+										"2017-11-13"
+									)
+								)
+							)
+						)
+					)
+				)
 			)
 		);
 	}
