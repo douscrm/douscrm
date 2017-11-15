@@ -1,6 +1,6 @@
 {
   "name": "douscrm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NodeJS CRM",
   "main": "douscrm.js",
   "scripts": {
