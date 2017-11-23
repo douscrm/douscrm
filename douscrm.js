@@ -1,12 +1,15 @@
-var express = require('express');
-var routes = require('./routes');
+'use strict'
+const express = require('express');
+const routes = require('./routes');
 
-var app = express();
+const app = express();
 
 app.use(express.static('public'));
 
 routes(app);
 
-app.listen(3000, function () {
-	console.log('START PROJECT - PORT: 3000');
+const port = process.env.PORT | 3000;
+
+app.listen(port, function () {
+	console.log(`START PROJECT - PORT: ${port}`);
 });

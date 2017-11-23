@@ -2,6 +2,17 @@
   "name": "douscrm",
   "version": "0.0.3",
   "description": "NodeJS CRM",
+  "keywords": [
+    "douscrm",
+    "crm",
+    "sales",
+    "contacts",
+    "leads",
+    "business",
+    "companies",
+    "deals",
+    "pipeline"
+  ],
   "main": "douscrm.js",
   "scripts": {
     "start": "node douscrm.js",
