@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import {Router, Route, Switch} from 'react-router-dom';
 import {createBrowserHistory} from 'history';
 import axios from 'axios';
+//import { config } from 'react-loopback';
 
 
 
@@ -15,29 +16,48 @@ import Admin from './views/pages/admin'
 
 
 
+//config.set('baseUrl', '/api/');
+
+
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			appIsLoaded: false
+			appIsLoaded: false,
+			isLogged: false
 		}
+
+		this.loggedIn = this.loggedIn.bind(this);
 	}
 
 
 	componentDidMount() {
-		//axios.get('/user?ID=12345');
 		var self = this;
 
-		setTimeout(() => {
-			store.dispatch({
-				type: 'login',
-				bool: true
-			});
+		const token = sessionStorage.getItem('token');
+		const uid = sessionStorage.getItem('uid');
+		axios.defaults.headers.common['Authorization'] = `${token}`;
+
+		axios.get(`${globals.api}/users/logged`).then((response) => {
+			if(response.data) {
+				self.setState({
+					appIsLoaded: true,
+					isLogged: true
+				});
+			} else {
+				self.setState({
+					appIsLoaded: true,
+					isLogged: false
+				});
+			}
+		}).catch((error) => {
 			self.setState({
-				appIsLoaded: true
+				appIsLoaded: true,
+				isLogged: false
 			});
-		}, 1000);
+		});
 	}
 
 
@@ -55,6 +75,12 @@ class App extends React.Component {
 		}
 	}*/
 
+	loggedIn() {
+		this.setState({isLogged: true});
+	}
+
+
+
 	render() {
 		if(!this.state.appIsLoaded) {
 			return (<div className="container-fluid" style={{height: '100vh'}}>
@@ -68,8 +94,8 @@ class App extends React.Component {
 		
 
 
-		if(!store.getState().isLogged) {
-			return (<Login/>);
+		if(!this.state.isLogged) {
+			return (<Login loggedIn={this.loggedIn}/>);
 		} else {
 			return (<Admin/>);
 		}

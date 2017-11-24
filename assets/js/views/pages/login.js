@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Redirect} from 'react-router-dom';
-import store from './../../store';
+import axios from 'axios';
+import globals from '../../globals';
 
 
 
@@ -9,7 +10,8 @@ class Login extends Component {
 		super(props);
 
 		this.state = {
-			isLogged: false
+			email: '',
+			password: ''
 		}
 
 		this.onSubmit = this.onSubmit.bind(this);
@@ -17,13 +19,22 @@ class Login extends Component {
 
 
 	onSubmit(e) {
+		const self = this;
 		e.preventDefault();
 
-		console.log('submit')
-
-		store.dispatch({
-			type: 'login',
-			bool: true
+		axios.post(`${globals.api}/users/login`, {
+			email: this.state.email,
+			password: this.state.password
+		}).then((response) => {
+			if(response.data.id) {
+				axios.defaults.headers.common['Authorization'] = response.data.id;
+				sessionStorage.setItem('token', response.data.id);
+				sessionStorage.setItem('uid', response.data.userId);
+				self.props.loggedIn();
+			} else {
+				console.log(response)
+			}
+			
 		});
 
 		this.setState({ isLogged: true })
@@ -31,21 +42,17 @@ class Login extends Component {
 
 
 	render() {
-		if(this.state.isLogged) {
-			return (<Redirect to={{pathname: '/'}}/>);
-		}
-
-		
-
 		return (<div className="container">
 			<div className="row">
 				<div className="col-12">
 					<h1>Login</h1>
 					<form onSubmit={this.onSubmit}>
 						<label htmlFor="dous-email">Email</label>
-						<input type="email" className="form-control" id="dous-email" placeholder="Email" required/>
+						<input type="email" className="form-control" id="dous-email" placeholder="Email" required value={this.state.email} onChange={(event) => { this.setState({email: event.target.value}); }} />
+						<small>By default use "admin@douscrm.com"</small><br/>
 						<label htmlFor="dous-password">Password</label>
-						<input type="password" className="form-control" id="dous-password" placeholder="Password" required/>
+						<input type="password" className="form-control" id="dous-password" placeholder="Password" value={this.state.password} required onChange={(event) => { this.setState({password: event.target.value}); }}/>
+						<small>By default use "admin"</small><br/>
 						
 						<button type="submit" className="btn btn-primary">Login</button>
 					</form>

@@ -1,7 +1,7 @@
 module.exports = {
   entry: './assets/js/app.js',
   output: {
-    filename: './public/js/douscrm.js'
+    filename: './client/js/douscrm.js'
   },
   module: {
     loaders: [

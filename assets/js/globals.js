@@ -5,5 +5,6 @@ const history = createBrowserHistory();
 
 
 export default {
-	history: history
+	history: history,
+	api: '/api'
 };
