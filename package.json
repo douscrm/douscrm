@@ -22,6 +22,7 @@
     "build": "webpack -w",
     "posttest": "npm run lint && nsp check",
     "test": "nyc --all --exclude \"public/assets/*\" --reporter=lcov ./node_modules/mocha/bin/_mocha --no-timeouts --async-only --colors && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "simpletest": "./node_modules/mocha/bin/_mocha --no-timeouts --async-only --colors",
     "check": "npm run lint;npm run test"
   },
   "dependencies": {
@@ -32,7 +33,7 @@
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^2.0.0",
     "loopback-component-explorer": "^5.0.0",
-    "loopback": "^3.0.0"
+    "loopback": "^3.16.2"
   },
   "devDependencies": {
     "axios": "^0.17.1",
