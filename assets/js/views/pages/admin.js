@@ -9,11 +9,12 @@ import business from './../sections/business/list';
 import leads from './../sections/leads/list';
 import oportunities from './../sections/oportunities/list';
 import projects from './../sections/projects/list';
-import tasks from './../sections/tasks/list';
+import tasks from './../sections/tasks';
 import calendar from './../sections/calendar/calendar';
 import reports from './../sections/reports/list';
 
 
+console.log(tasks)
 
 
 class Admin extends Component {
@@ -116,7 +117,11 @@ class Admin extends Component {
 								<Route path="/leads" component={leads}/>
 								<Route path="/oportunities" component={oportunities}/>
 								<Route path="/projects" component={projects}/>
-								<Route path="/tasks" component={tasks}/>
+								
+								<Route path="/tasks/create" component={tasks.create}/>
+								<Route path="/tasks/:id" component={tasks.profile}/>
+								<Route path="/tasks" component={tasks.list}/>
+								
 								<Route path="/calendar" component={calendar}/>
 								<Route path="/reports" component={reports}/>
 								<Route path="/*" component={dashboard}/>

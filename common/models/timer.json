@@ -1,12 +1,16 @@
 {
   "name": "Timer",
   "plural": "timers",
-  "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
   "validations": [],
   "relations": {},
   "acls": [],
