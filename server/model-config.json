@@ -50,6 +50,10 @@
     "dataSource": "db",
     "public": true
   },
+  "Lead": {
+    "dataSource": "db",
+    "public": true
+  },
   "Oportunity": {
     "dataSource": "db",
     "public": true

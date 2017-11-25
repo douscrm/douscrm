@@ -46,8 +46,6 @@ class TaskList extends Component {
 				<td></td>
 			</tr>);
 
-			//<td><Link to={`/projects/${1}`}>Demo project</Link></td>
-
 			this.models[i]
 		}
 

@@ -6,7 +6,7 @@ import globals from '../../../globals';
 
 
 
-class TaskProfile extends Component {
+class LeadProfile extends Component {
 	constructor(props) {
 		super(props);
 
@@ -26,7 +26,7 @@ class TaskProfile extends Component {
 		const self = this;
 		const id = self.props.match.params.id;
 
-		axios.get(`${globals.api}/tasks/${id}`).then((response) => {
+		axios.get(`${globals.api}/leads/${id}`).then((response) => {
 			self.model = response.data;
 			self.setState({ modelLoad: true });
 		}).catch((error) => {
@@ -40,7 +40,7 @@ class TaskProfile extends Component {
 		const self = this;
 		const id = self.props.match.params.id;
 
-		axios.delete(`${globals.api}/tasks/${id}`).then((response) => {
+		axios.delete(`${globals.api}/leads/${id}`).then((response) => {
 			self.setState({ modelDelete: true });
 		}).catch((error) => {
 			console.log(error)
@@ -51,7 +51,7 @@ class TaskProfile extends Component {
 
 	render() {
 		if(this.state.modelDelete) {
-			return (<Redirect to="/tasks"/>);
+			return (<Redirect to="/leads"/>);
 		}
 
 		return (<div className="container">
@@ -63,7 +63,7 @@ class TaskProfile extends Component {
 								<Link to="/">Home</Link>
 							</li>
 							<li className="breadcrumb-item">
-								<Link to="/tasks">Tasks</Link>
+								<Link to="/leads">Leads</Link>
 							</li>
 							<li className="breadcrumb-item active">{this.model.name}</li>
 						</ol>
@@ -76,7 +76,7 @@ class TaskProfile extends Component {
 						<BoxCardHeader>{this.model.name}</BoxCardHeader>
 						<BoxCardBody></BoxCardBody>
 						<BoxCardFooter>
-							<Link className="btn btn-primary float-left" to={`/tasks/${this.model.id}/update`}>Edit task</Link>
+							<Link className="btn btn-primary float-left" to={`/leads/${this.model.id}/update`}>Edit lead</Link>
 							<button className="btn btn-danger float-right" onClick={this.deleteItem}>Delete</button>
 						</BoxCardFooter>
 					</BoxCard>
@@ -87,4 +87,4 @@ class TaskProfile extends Component {
 }
 
 
-export default TaskProfile;
+export default LeadProfile;

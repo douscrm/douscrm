@@ -9,6 +9,38 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "project": {
+      "type": "number"
+    },
+    "milestone": {
+      "type": "number"
+    },
+    "business": {
+      "type": "number"
+    },
+    "users": {
+      "type": [
+        "number"
+      ],
+      "required": false
+    },
+    "beginDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "description": {
+      "type": "string"
+    },
+    "notes": {
+      "type": [
+        "string"
+      ]
+    },
+    "status": {
+      "type": "string"
     }
   },
   "validations": [],

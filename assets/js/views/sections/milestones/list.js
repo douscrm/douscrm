@@ -7,7 +7,7 @@ import globals from '../../../globals';
 
 
 
-class LeadList extends Component {
+class MilestoneList extends Component {
 	constructor(props) {
 		super(props);
 
@@ -24,7 +24,7 @@ class LeadList extends Component {
 		const self = this;
 		const id = self.props.match.params.id;
 
-		axios.get(`${globals.api}/leads`).then((response) => {
+		axios.get(`${globals.api}/milestones`).then((response) => {
 			self.models = response.data;
 			self.setState({ modelLoad: true });
 		}).catch((error) => {
@@ -38,10 +38,10 @@ class LeadList extends Component {
 		const lines = [];
 		for (var i = this.models.length - 1; i >= 0; i--) {
 			const model = this.models[i];
-			const key = _.uniqueId('lead-');
+			const key = _.uniqueId('task-');
 
 			lines.push(<tr key={key}>
-				<td><Link to={`/leads/${model.id}`}>{model.name}</Link></td>
+				<td><Link to={`/milestones/${model.id}`}>{model.name}</Link></td>
 				<td></td>
 				<td></td>
 			</tr>);
@@ -58,14 +58,14 @@ class LeadList extends Component {
 							<li className="breadcrumb-item">
 								<Link to="/">Home</Link>
 							</li>
-							<li className="breadcrumb-item active">Leads</li>
+							<li className="breadcrumb-item active">Milestones</li>
 						</ol>
 					</nav>
 				</div>
 			</div>
 			<div className="row">
 				<div className="col-12">
-					<Card title="Leads list">
+					<Card title="Milestones list">
 						<table className="table">
 							<thead>
 								<tr>
@@ -75,7 +75,7 @@ class LeadList extends Component {
 							<tbody>{lines}</tbody>
 						</table>
 						<div className="card-footer text-muted">
-							<Link className="btn btn-primary" to={`/leads/create`}>Add lead</Link>
+							<Link className="btn btn-primary" to={`/milestones/create`}>Add milestone</Link>
 						</div>
 					</Card>
 				</div>
@@ -85,4 +85,4 @@ class LeadList extends Component {
 }
 
 
-export default LeadList;
+export default MilestoneList;

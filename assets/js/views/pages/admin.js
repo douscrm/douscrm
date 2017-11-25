@@ -4,17 +4,16 @@ import globals from './../../globals';
 
 
 import dashboard from './../sections/dashboards/dashboard';
-import contacts from './../sections/contacts/list';
-import business from './../sections/business/list';
-import leads from './../sections/leads/list';
-import oportunities from './../sections/oportunities/list';
-import projects from './../sections/projects/list';
+import contacts from './../sections/contacts';
+import business from './../sections/business';
+import leads from './../sections/leads';
+import oportunities from './../sections/oportunities';
+import projects from './../sections/projects';
 import tasks from './../sections/tasks';
 import calendar from './../sections/calendar/calendar';
 import reports from './../sections/reports/list';
+import milestones from './../sections/milestones';
 
-
-console.log(tasks)
 
 
 class Admin extends Component {
@@ -112,13 +111,38 @@ class Admin extends Component {
 						</div>
 						<div className="col">
 							<Switch>
-								<Route path="/contacts" component={contacts}/>
-								<Route path="/business" component={business}/>
-								<Route path="/leads" component={leads}/>
-								<Route path="/oportunities" component={oportunities}/>
-								<Route path="/projects" component={projects}/>
-								
+								<Route path="/contacts/create" component={contacts.create}/>
+								<Route path="/contacts/:id/update" component={contacts.update}/>
+								<Route path="/contacts/:id" component={contacts.profile}/>
+								<Route path="/contacts" component={contacts.list}/>
+
+								<Route path="/business/create" component={business.create}/>
+								<Route path="/business/:id/update" component={business.update}/>
+								<Route path="/business/:id" component={business.profile}/>
+								<Route path="/business" component={business.list}/>
+
+								<Route path="/leads/create" component={leads.create}/>
+								<Route path="/leads/:id/update" component={leads.update}/>
+								<Route path="/leads/:id" component={leads.profile}/>
+								<Route path="/leads" component={leads.list}/>
+
+								<Route path="/oportunities/create" component={oportunities.create}/>
+								<Route path="/oportunities/:id/update" component={oportunities.update}/>
+								<Route path="/oportunities/:id" component={oportunities.profile}/>
+								<Route path="/oportunities" component={oportunities.list}/>
+
+								<Route path="/projects/create" component={projects.create}/>
+								<Route path="/projects/:id/update" component={projects.update}/>
+								<Route path="/projects/:id" component={projects.profile}/>
+								<Route path="/projects" component={projects.list}/>
+
+								<Route path="/milestones/create" component={milestones.create}/>
+								<Route path="/milestones/:id/update" component={milestones.update}/>
+								<Route path="/milestones/:id" component={milestones.profile}/>
+								<Route path="/milestones" component={milestones.list}/>
+
 								<Route path="/tasks/create" component={tasks.create}/>
+								<Route path="/tasks/:id/update" component={tasks.update}/>
 								<Route path="/tasks/:id" component={tasks.profile}/>
 								<Route path="/tasks" component={tasks.list}/>
 								
