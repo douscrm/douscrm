@@ -32,7 +32,7 @@ class Login extends Component {
 				sessionStorage.setItem('uid', response.data.userId);
 				self.props.loggedIn();
 			} else {
-				console.log(response)
+				//console.log(response)
 			}
 			
 		});
@@ -42,6 +42,9 @@ class Login extends Component {
 
 
 	render() {
+		const smallUser = (globals.configuration.data.env != 'production') ? (<small>By default use "admin@douscrm.com"</small>) : '';
+		const smallPassword = (globals.configuration.data.env != 'production') ? (<small>By default use "admin"</small>) : '';
+
 		return (<div className="container">
 			<div className="row">
 				<div className="col-12">
@@ -49,10 +52,10 @@ class Login extends Component {
 					<form onSubmit={this.onSubmit}>
 						<label htmlFor="dous-email">Email</label>
 						<input type="email" className="form-control" id="dous-email" placeholder="Email" required value={this.state.email} onChange={(event) => { this.setState({email: event.target.value}); }} />
-						<small>By default use "admin@douscrm.com"</small><br/>
+						{smallUser}<br/>
 						<label htmlFor="dous-password">Password</label>
 						<input type="password" className="form-control" id="dous-password" placeholder="Password" value={this.state.password} required onChange={(event) => { this.setState({password: event.target.value}); }}/>
-						<small>By default use "admin"</small><br/>
+						{smallPassword}<br/>
 						
 						<button type="submit" className="btn btn-primary">Login</button>
 					</form>

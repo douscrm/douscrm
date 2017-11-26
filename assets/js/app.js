@@ -7,10 +7,7 @@ import axios from 'axios';
 //import { config } from 'react-loopback';
 
 
-
-import store from './store';
 import globals from './globals';
-
 import Login from './views/pages/login'
 import Admin from './views/pages/admin'
 
@@ -41,7 +38,9 @@ class App extends React.Component {
 		axios.defaults.headers.common['Authorization'] = `${token}`;
 
 		axios.get(`${globals.api}/users/logged`).then((response) => {
-			if(response.data) {
+			globals.configuration.setData('env', response.data.env);
+
+			if(response.data.status) {
 				self.setState({
 					appIsLoaded: true,
 					isLogged: true
@@ -61,19 +60,6 @@ class App extends React.Component {
 	}
 
 
-	/*render() {
-		console.log(store.getState().isLogged)
-
-		if(!store.getState().isLogged) {
-			return (<Switch>
-				<Route path="/*" component={login}/>
-			</Switch>);
-		} else {
-			return (<Switch>
-				<Route path="/" component={dashboard}/>
-			</Switch>);
-		}
-	}*/
 
 	loggedIn() {
 		this.setState({isLogged: true});
@@ -105,9 +91,7 @@ class App extends React.Component {
 
 
 ReactDOM.render((
-	<Provider store={store}>
-		<Router history={globals.history}>
-			<App />
-		</Router>
-	</Provider>
+	<Router history={globals.history}>
+		<App />
+	</Router>
 ), document.getElementById('root'));

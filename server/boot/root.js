@@ -20,13 +20,14 @@ module.exports = function(server) {
 
 	router.get('/api/users/logged', (req, res) => {
 		const Token = server.models.AccessToken;
+		const env = process.env.NODE_ENV || 'development';
 		
 		if(!req.accessToken) {
-			return res.json(false);
+			return res.json({status:false, env: env});
 		}
 
 		Token.findById(req.accessToken.id, (err, token) => {
-			res.json(true);
+			res.json({status:true, env: env});
 		});
 	});
 
