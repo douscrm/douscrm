@@ -56,6 +56,8 @@ class TaskCreate extends Component {
 			return (<Redirect to={`/tasks/${this.state.id}`}/>);
 		}
 
+		//TODO change to ref inputs see: https://reactjs.org/docs/uncontrolled-components.html
+
 		return (<div className="container">
 			<div className="row mt-3">
 				<div className="col-12">
@@ -80,7 +82,11 @@ class TaskCreate extends Component {
 					<Card title="Add task" padding={true}>
 						<form onSubmit={this.onSubmit}>
 							<label htmlFor="dous-name">Name</label>
-							<input type="text" className="form-control" id="dous-name" placeholder="Name" required value={this.model.name} onChange={(event) => { this.model.name = event.target.value; this.setState({name: event.target.value}); }} />
+							<input type="text" className="form-control" id="dous-name" placeholder="Name" required value={this.model.name} onChange={(event) => { this.model.name = event.target.value; }} />
+							<label htmlFor="dous-enddate">End date</label>
+							<input type="date" className="form-control" id="dous-enddate" placeholder="Date" value={(this.model.endDate) ? this.model.endDate.substr(0,10) : null} onChange={(event) => { this.model.endDate = event.target.value; }} />
+							<label htmlFor="dous-description">Description</label>
+							<textarea className="form-control" id="dous-description" placeholder="Description" value={this.model.description} onChange={(event) => { this.model.description = event.target.value; }}></textarea>
 							<br/>
 							<button type="submit" className="btn btn-primary">Update Task</button>
 						</form>

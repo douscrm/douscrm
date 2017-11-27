@@ -47827,11 +47827,12 @@ class TaskList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 						model.name
 					)
 				),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('td', null),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('td', null)
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'td',
+					null,
+					model.endDate ? model.endDate.substr(0, 10) : ''
+				)
 			));
-
-			this.models[i];
 		}
 
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -47894,11 +47895,6 @@ class TaskList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 										'th',
 										{ scope: 'col' },
 										'Date'
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'th',
-										{ scope: 'col' },
-										'Project'
 									)
 								)
 							),
@@ -48036,6 +48032,14 @@ class TaskCreate extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'dous-name', placeholder: 'Name', required: true, value: this.state.name, onChange: event => {
 									this.setState({ name: event.target.value });
 								} }),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'label',
+								{ htmlFor: 'dous-enddate' },
+								'End date'
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'date', className: 'form-control', id: 'dous-enddate', placeholder: 'Date', value: this.model.endDate, onChange: event => {
+									this.model.endDate = event.target.value;
+								} }),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 								'button',
@@ -48112,6 +48116,37 @@ class TaskProfile extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Redirect */], { to: '/tasks' });
 		}
 
+		const lines = [];
+		if (this.model.endDate) {
+			//TODO use moment
+			lines.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'li',
+				{ 'class': 'list-group-item' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'strong',
+					null,
+					'End date:'
+				),
+				' ',
+				this.model.endDate.substr(0, 10)
+			));
+		}
+
+		if (this.model.description) {
+			//TODO use moment
+			lines.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'li',
+				{ 'class': 'list-group-item' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'strong',
+					null,
+					'Description:'
+				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+				this.model.description
+			));
+		}
+
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'div',
 			{ className: 'container' },
@@ -48168,7 +48203,11 @@ class TaskProfile extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 							null,
 							this.model.name
 						),
-						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_boxcard__["b" /* BoxCardBody */], null),
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'ul',
+							{ 'class': 'list-group list-group-flush' },
+							lines
+						),
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							__WEBPACK_IMPORTED_MODULE_2__components_boxcard__["c" /* BoxCardFooter */],
 							null,
@@ -48254,6 +48293,8 @@ class TaskCreate extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Redirect */], { to: `/tasks/${this.state.id}` });
 		}
 
+		//TODO change to ref inputs see: https://reactjs.org/docs/uncontrolled-components.html
+
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'div',
 			{ className: 'container' },
@@ -48323,7 +48364,23 @@ class TaskCreate extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 								'Name'
 							),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'dous-name', placeholder: 'Name', required: true, value: this.model.name, onChange: event => {
-									this.model.name = event.target.value;this.setState({ name: event.target.value });
+									this.model.name = event.target.value;
+								} }),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'label',
+								{ htmlFor: 'dous-enddate' },
+								'End date'
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'date', className: 'form-control', id: 'dous-enddate', placeholder: 'Date', value: this.model.endDate ? this.model.endDate.substr(0, 10) : null, onChange: event => {
+									this.model.endDate = event.target.value;
+								} }),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'label',
+								{ htmlFor: 'dous-description' },
+								'Description'
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { className: 'form-control', id: 'dous-description', placeholder: 'Description', value: this.model.description, onChange: event => {
+									this.model.description = event.target.value;
 								} }),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

@@ -62,6 +62,8 @@ class TaskCreate extends Component {
 						<form onSubmit={this.onSubmit}>
 							<label htmlFor="dous-name">Name</label>
 							<input type="text" className="form-control" id="dous-name" placeholder="Name" required value={this.state.name} onChange={(event) => { this.setState({name: event.target.value}); }} />
+							<label htmlFor="dous-enddate">End date</label>
+							<input type="date" className="form-control" id="dous-enddate" placeholder="Date" value={this.model.endDate} onChange={(event) => { this.model.endDate = event.target.value; }} />
 							<br/>
 							<button type="submit" className="btn btn-primary">Add Task</button>
 						</form>
