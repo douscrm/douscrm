@@ -44720,10 +44720,12 @@ class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 					)
 				),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('td', null),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('td', null)
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'td',
+					null,
+					model.endDate ? model.endDate.substr(0, 10) : ''
+				)
 			));
-
-			this.models[i];
 		}
 
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -44777,11 +44779,6 @@ class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 										'th',
 										{ scope: 'col' },
 										'Date'
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'th',
-										{ scope: 'col' },
-										'Project'
 									)
 								)
 							),

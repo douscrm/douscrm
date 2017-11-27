@@ -42,10 +42,8 @@ class Dashboard extends Component {
 			lines.push(<tr key={key}>
 				<td><Link to={`/tasks/${model.id}`}>{model.name}</Link></td>
 				<td></td>
-				<td></td>
+				<td>{(model.endDate) ? model.endDate.substr(0,10) : ''}</td>
 			</tr>);
-
-			this.models[i]
 		}
 
 		return (<div className="container">
@@ -66,7 +64,6 @@ class Dashboard extends Component {
 								<tr>
 									<th scope="col">Task</th>
 									<th scope="col">Date</th>
-									<th scope="col">Project</th>
 								</tr>
 							</thead>
 							<tbody>{lines}</tbody>
