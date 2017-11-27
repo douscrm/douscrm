@@ -44501,6 +44501,35 @@ class Admin extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 	}
 
 	render() {
+		const menuData = [{ link: '/', name: 'Home' }, { link: '/contacts', name: 'Contacts' }, { link: '/business', name: 'Business' }, { link: '/leads', name: 'Leads' }, { link: '/oportunities', name: 'Oportunities' }, { link: '/projects', name: 'Projects' }, { link: '/tasks', name: 'Tasks' }, { link: '/calendar', name: 'Calendar' }, { link: '/reports', name: 'Reports' }];
+		const menuCollapse = [];
+		const menuLateral = [];
+		let counter = 0;
+
+		menuData.forEach(item => {
+			menuLateral.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'li',
+				{ key: `menu-lateral-${counter}`, className: 'nav-item' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+					{ to: item.link, className: 'nav-link text-white' },
+					item.name
+				)
+			));
+
+			menuCollapse.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'li',
+				{ key: `menu-collapse-${counter}`, className: 'nav-item' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
+					{ to: item.link, className: 'nav-link' },
+					item.name
+				)
+			));
+
+			counter++;
+		});
+
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'div',
 			{ className: 'h-100' },
@@ -44516,6 +44545,15 @@ class Admin extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 					'button',
 					{ className: 'navbar-toggler', type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarSupportedContent', 'aria-controls': 'navbarSupportedContent', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation' },
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'navbar-toggler-icon' })
+				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'collapse navbar-collapse', id: 'navbarSupportedContent' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'ul',
+						{ className: 'navbar-nav mr-auto d-block d-sm-none' },
+						menuCollapse
+					)
 				)
 			),
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -44526,91 +44564,11 @@ class Admin extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 					{ className: 'row h-100' },
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 						'div',
-						{ className: 'col-2 bg-dark text-white' },
+						{ className: 'col-2 bg-dark text-white d-none d-sm-block' },
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							'ul',
 							{ className: 'nav flex-column' },
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'li',
-								{ className: 'nav-item' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
-									{ to: '/', className: 'nav-link text-white' },
-									'Home'
-								)
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'li',
-								{ className: 'nav-item' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
-									{ to: '/contacts', className: 'nav-link text-white' },
-									'Contacts'
-								)
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'li',
-								{ className: 'nav-item' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
-									{ to: '/business', className: 'nav-link text-white' },
-									'Business'
-								)
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'li',
-								{ className: 'nav-item' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
-									{ to: '/leads', className: 'nav-link text-white' },
-									'Leads'
-								)
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'li',
-								{ className: 'nav-item' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
-									{ to: '/oportunities', className: 'nav-link text-white' },
-									'Oportunities'
-								)
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'li',
-								{ className: 'nav-item' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
-									{ to: '/projects', className: 'nav-link text-white' },
-									'Projects'
-								)
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'li',
-								{ className: 'nav-item' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
-									{ to: '/tasks', className: 'nav-link text-white' },
-									'Tasks'
-								)
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'li',
-								{ className: 'nav-item' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
-									{ to: '/calendar', className: 'nav-link text-white' },
-									'Calendar'
-								)
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'li',
-								{ className: 'nav-item' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* Link */],
-									{ to: '/reports', className: 'nav-link text-white' },
-									'Reports'
-								)
-							)
+							menuLateral
 						)
 					),
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

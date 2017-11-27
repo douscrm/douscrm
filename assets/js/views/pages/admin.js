@@ -36,6 +36,34 @@ class Admin extends Component {
 
 
 	render() {
+		const menuData = [
+			{link: '/', name: 'Home'},
+			{link: '/contacts', name: 'Contacts'},
+			{link: '/business', name: 'Business'},
+			{link: '/leads', name: 'Leads'},
+			{link: '/oportunities', name: 'Oportunities'},
+			{link: '/projects', name: 'Projects'},
+			{link: '/tasks', name: 'Tasks'},
+			{link: '/calendar', name: 'Calendar'},
+			{link: '/reports', name: 'Reports'}
+		];
+		const menuCollapse = [];
+		const menuLateral = [];
+		let counter = 0;
+
+		menuData.forEach((item) => {
+			menuLateral.push(<li key={`menu-lateral-${counter}`} className="nav-item">
+				<Link to={item.link} className="nav-link text-white">{item.name}</Link>
+			</li>);
+
+			menuCollapse.push(<li key={`menu-collapse-${counter}`} className="nav-item">
+				<Link to={item.link} className="nav-link">{item.name}</Link>
+			</li>);
+
+			counter++;
+		});
+
+
 		return (
 			<div className="h-100">
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,6 +71,9 @@ class Admin extends Component {
 					<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
 					</button>
+					<div className="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul className="navbar-nav mr-auto d-block d-sm-none">{menuCollapse}</ul>
+					</div>
 					{/*
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul className="navbar-nav mr-auto">
@@ -75,35 +106,9 @@ class Admin extends Component {
 				</nav>
 				<div className="container-fluid h-100">
 					<div className="row h-100">
-						<div className="col-2 bg-dark text-white">
+						<div className="col-2 bg-dark text-white d-none d-sm-block">
 							<ul className="nav flex-column">
-								<li className="nav-item">
-									<Link to="/" className="nav-link text-white">Home</Link>
-								</li>
-								<li className="nav-item">
-									<Link to="/contacts" className="nav-link text-white">Contacts</Link>
-								</li>
-								<li className="nav-item">
-									<Link to="/business" className="nav-link text-white">Business</Link>
-								</li>
-								<li className="nav-item">
-									<Link to="/leads" className="nav-link text-white">Leads</Link>
-								</li>
-								<li className="nav-item">
-									<Link to="/oportunities" className="nav-link text-white">Oportunities</Link>
-								</li>
-								<li className="nav-item">
-									<Link to="/projects" className="nav-link text-white">Projects</Link>
-								</li>
-								<li className="nav-item">
-									<Link to="/tasks" className="nav-link text-white">Tasks</Link>
-								</li>
-								<li className="nav-item">
-									<Link to="/calendar" className="nav-link text-white">Calendar</Link>
-								</li>
-								<li className="nav-item">
-									<Link to="/reports" className="nav-link text-white">Reports</Link>
-								</li>
+								{menuLateral}
 								{/*<li className="nav-item">
 									<Link to="/invoices" className="nav-link text-white">Invoices</Link>
 								</li>*/}
