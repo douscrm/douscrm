@@ -44641,10 +44641,13 @@ class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 		super(props);
 
 		this.state = {
-			modelLoad: false
+			modelLoad: false,
+			refreshId: '0'
 		};
 
 		this.models = [];
+
+		this.completeTask = this.completeTask.bind(this);
 	}
 
 	componentDidMount() {
@@ -44659,15 +44662,36 @@ class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 		});
 	}
 
+	completeTask(model, index) {
+		const self = this;
+
+		__WEBPACK_IMPORTED_MODULE_3_axios___default.a.patch(`${__WEBPACK_IMPORTED_MODULE_4__globals__["a" /* default */].api}/tasks/${model.id}`, { status: 'completed' }).then(response => {
+			if (response.status == 200 && response.data.id) {
+				self.models[index].status = 'completed';
+				self.setState({ refreshId: _.uniqueId('refresh') });
+			}
+		});
+	}
+
 	render() {
+		const orderedModels = _.sortBy(this.models, [model => {
+			const status = model.status == 'completed' ? '100' : '999';
+			const date = model.endDate ? model.endDate : 0;
+
+			return `${status}-${date}`;
+		}]);
+
 		const lines = [];
-		for (var i = this.models.length - 1; i >= 0; i--) {
-			const model = this.models[i];
+		for (let i = orderedModels.length - 1; i >= 0; i--) {
+			const model = orderedModels[i];
 			const key = _.uniqueId('task-');
+			const index = i;
+			const icon = model.status == 'completed' ? 'fa-check-circle-o' : 'fa-circle-o';
+			const className = model.status == 'completed' ? 'table-dark' : '';
 
 			lines.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'tr',
-				{ key: key },
+				{ key: key, className: className },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'td',
 					null,
@@ -44677,11 +44701,21 @@ class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 						model.name
 					)
 				),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('td', null),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'td',
 					null,
 					model.endDate ? model.endDate.substr(0, 10) : ''
+				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'td',
+					null,
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'button',
+						{ type: 'button', className: 'btn btn-primary', onClick: event => {
+								this.completeTask(model, index);
+							} },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: `fa ${icon}` })
+					)
 				)
 			));
 		}
@@ -44737,6 +44771,11 @@ class Dashboard extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 										'th',
 										{ scope: 'col' },
 										'Date'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Status'
 									)
 								)
 							),
