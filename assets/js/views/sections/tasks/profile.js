@@ -58,12 +58,12 @@ class TaskProfile extends Component {
 		const lines = [];
 		if(this.model.endDate) {
 			//TODO use moment
-			lines.push(<li class="list-group-item"><strong>End date:</strong> {this.model.endDate.substr(0, 10)}</li>);
+			lines.push(<li key={`lines-${lines.length}`} className="list-group-item"><strong>End date:</strong> {this.model.endDate.substr(0, 10)}</li>);
 		}
 
 		if(this.model.description) {
 			//TODO use moment
-			lines.push(<li class="list-group-item"><strong>Description:</strong><br/>{this.model.description}</li>);
+			lines.push(<li key={`lines-${lines.length}`} className="list-group-item"><strong>Description:</strong><br/>{this.model.description}</li>);
 		}
 
 
@@ -87,7 +87,7 @@ class TaskProfile extends Component {
 				<div className="col-12">
 					<BoxCard>
 						<BoxCardHeader>{this.model.name}</BoxCardHeader>
-						<ul class="list-group list-group-flush">{lines}</ul>
+						<ul className="list-group list-group-flush">{lines}</ul>
 						<BoxCardFooter>
 							<Link className="btn btn-primary float-left" to={`/tasks/${this.model.id}/update`}>Edit task</Link>
 							<button className="btn btn-danger float-right" onClick={this.deleteItem}>Delete</button>

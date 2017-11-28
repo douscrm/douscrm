@@ -47746,10 +47746,13 @@ class TaskList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 		super(props);
 
 		this.state = {
-			modelLoad: false
+			modelLoad: false,
+			refreshId: '0'
 		};
 
 		this.models = [];
+
+		this.completeTask = this.completeTask.bind(this);
 	}
 
 	componentDidMount() {
@@ -47764,15 +47767,36 @@ class TaskList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 		});
 	}
 
+	completeTask(model, index) {
+		const self = this;
+
+		__WEBPACK_IMPORTED_MODULE_4_axios___default.a.patch(`${__WEBPACK_IMPORTED_MODULE_5__globals__["a" /* default */].api}/tasks/${model.id}`, { status: 'completed' }).then(response => {
+			if (response.status == 200 && response.data.id) {
+				self.models[index].status = 'completed';
+				self.setState({ refreshId: __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.uniqueId('refresh') });
+			}
+		});
+	}
+
 	render() {
+		const orderedModels = __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.sortBy(this.models, [model => {
+			const status = model.status == 'completed' ? '100' : '999';
+			const date = model.endDate ? model.endDate : 0;
+
+			return `${status}-${date}`;
+		}]);
+
 		const lines = [];
-		for (var i = this.models.length - 1; i >= 0; i--) {
-			const model = this.models[i];
+		for (let i = orderedModels.length - 1; i >= 0; i--) {
+			const model = orderedModels[i];
 			const key = __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.uniqueId('task-');
+			const index = i;
+			const icon = model.status == 'completed' ? 'fa-check-circle-o' : 'fa-circle-o';
+			const className = model.status == 'completed' ? 'table-dark' : '';
 
 			lines.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'tr',
-				{ key: key },
+				{ key: key, className: className },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'td',
 					null,
@@ -47786,6 +47810,17 @@ class TaskList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 					'td',
 					null,
 					model.endDate ? model.endDate.substr(0, 10) : ''
+				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'td',
+					null,
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'button',
+						{ type: 'button', className: 'btn btn-primary', onClick: event => {
+								this.completeTask(model, index);
+							} },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: `fa ${icon}` })
+					)
 				)
 			));
 		}
@@ -47850,6 +47885,11 @@ class TaskList extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 										'th',
 										{ scope: 'col' },
 										'Date'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'th',
+										{ scope: 'col' },
+										'Status'
 									)
 								)
 							),
@@ -47899,6 +47939,7 @@ class TaskCreate extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 	constructor(props) {
 		super(props);
 
+		this.model = {};
 		this.state = {
 			name: '',
 			id: null
@@ -47911,9 +47952,7 @@ class TaskCreate extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 		const self = this;
 		e.preventDefault();
 
-		__WEBPACK_IMPORTED_MODULE_3_axios___default.a.post(`${__WEBPACK_IMPORTED_MODULE_4__globals__["a" /* default */].api}/tasks`, {
-			name: self.state.name
-		}).then(response => {
+		__WEBPACK_IMPORTED_MODULE_3_axios___default.a.post(`${__WEBPACK_IMPORTED_MODULE_4__globals__["a" /* default */].api}/tasks`, this.model).then(response => {
 			if (response.status == 200 && response.data.id) {
 				self.setState({ id: response.data.id });
 			}
@@ -47984,8 +48023,8 @@ class TaskCreate extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 								{ htmlFor: 'dous-name' },
 								'Name'
 							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'dous-name', placeholder: 'Name', required: true, value: this.state.name, onChange: event => {
-									this.setState({ name: event.target.value });
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'dous-name', placeholder: 'Name', required: true, value: this.model.name, onChange: event => {
+									this.model.name = event.target.value;
 								} }),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 								'label',
@@ -48076,7 +48115,7 @@ class TaskProfile extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 			//TODO use moment
 			lines.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'li',
-				{ 'class': 'list-group-item' },
+				{ key: `lines-${lines.length}`, className: 'list-group-item' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'strong',
 					null,
@@ -48091,7 +48130,7 @@ class TaskProfile extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 			//TODO use moment
 			lines.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'li',
-				{ 'class': 'list-group-item' },
+				{ key: `lines-${lines.length}`, className: 'list-group-item' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'strong',
 					null,
@@ -48160,7 +48199,7 @@ class TaskProfile extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 						),
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 							'ul',
-							{ 'class': 'list-group list-group-flush' },
+							{ className: 'list-group list-group-flush' },
 							lines
 						),
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

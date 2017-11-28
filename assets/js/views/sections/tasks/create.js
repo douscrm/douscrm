@@ -10,6 +10,7 @@ class TaskCreate extends Component {
 	constructor(props) {
 		super(props);
 
+		this.model = {};
 		this.state = {
 			name: '',
 			id: null
@@ -24,9 +25,7 @@ class TaskCreate extends Component {
 		const self = this;
 		e.preventDefault();
 
-		axios.post(`${globals.api}/tasks`, {
-			name: self.state.name
-		}).then((response) => {
+		axios.post(`${globals.api}/tasks`, this.model).then((response) => {
 			if(response.status == 200 && response.data.id) {
 				self.setState({id: response.data.id});
 			}
@@ -61,7 +60,7 @@ class TaskCreate extends Component {
 					<Card title="Add task" padding={true}>
 						<form onSubmit={this.onSubmit}>
 							<label htmlFor="dous-name">Name</label>
-							<input type="text" className="form-control" id="dous-name" placeholder="Name" required value={this.state.name} onChange={(event) => { this.setState({name: event.target.value}); }} />
+							<input type="text" className="form-control" id="dous-name" placeholder="Name" required value={this.model.name} onChange={(event) => { this.model.name = event.target.value; }} />
 							<label htmlFor="dous-enddate">End date</label>
 							<input type="date" className="form-control" id="dous-enddate" placeholder="Date" value={this.model.endDate} onChange={(event) => { this.model.endDate = event.target.value; }} />
 							<br/>
