@@ -12,6 +12,10 @@ import Login from './views/pages/login'
 import Admin from './views/pages/admin'
 
 
+import { Layout, Menu, Icon, Spin, Alert, Form } from 'antd';
+const { Header, Sider, Content } = Layout;
+
+
 
 //config.set('baseUrl', '/api/');
 
@@ -23,7 +27,9 @@ class App extends React.Component {
 
 		this.state = {
 			appIsLoaded: false,
-			isLogged: false
+			loadingScreen: true,
+			isLogged: false,
+			collapsed: false
 		}
 
 		this.loggedIn = this.loggedIn.bind(this);
@@ -33,10 +39,14 @@ class App extends React.Component {
 	componentDidMount() {
 		var self = this;
 
+		setTimeout(() => {
+			self.setState({ loadingScreen: false });
+		}, 750);
+
 		const token = sessionStorage.getItem('token');
 		const uid = sessionStorage.getItem('uid');
 		axios.defaults.headers.common['Authorization'] = `${token}`;
-
+		
 		axios.get(`${globals.api}/users/logged`).then((response) => {
 			globals.configuration.setData('env', response.data.env);
 
@@ -68,17 +78,9 @@ class App extends React.Component {
 
 
 	render() {
-		if(!this.state.appIsLoaded) {
-			return (<div className="container-fluid" style={{height: '100vh'}}>
-				<div className="row align-items-center" style={{height: '100vh'}}>
-					<div className="col text-center">
-						<i className='fa fa-circle-o-notch fa-spin fa-5x'></i>
-					</div>
-				</div>
-			</div>)
+		if(!this.state.appIsLoaded || this.state.loadingScreen) {
+			return (<Spin tip="Loading..." size="large"><Layout style={{height: '100vh'}}></Layout></Spin>);
 		}
-		
-
 
 		if(!this.state.isLogged) {
 			return (<Login loggedIn={this.loggedIn}/>);
