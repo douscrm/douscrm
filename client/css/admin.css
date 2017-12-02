@@ -16,3 +16,13 @@
 	border-radius: 6px;
 	margin: 16px;
 }
+
+
+.dous-breadcrumb {
+	margin-bottom: 15px;
+}
+
+.dous-linejump {
+	white-space: pre-wrap;
+	word-break: normal;
+}
