@@ -19,67 +19,9 @@ class TaskList extends Component {
 		};
 
 		this.models = [];
+		this.otherModels = [];
 
-		this.handleTableChange = this.handleTableChange.bind(this);
-		this.statusTask = this.statusTask.bind(this);
-		this.callTasks = this.callTasks.bind(this);
-	}
-
-
-
-	componentDidMount() {
-		this.callTasks();
-	}
-
-
-
-	callTasks() {
-		const self = this;
-		axios.get(`${globals.api}/tasks`).then((response) => {
-			self.models = response.data;
-			self.setState({ loading: false });
-		}).catch((error) => {
-			console.log(error)
-		});
-	}
-
-
-
-	statusTask(model, status) {
-		const self = this;
-		self.setState({ loading: true });
-
-		axios.patch(`${globals.api}/tasks/${model.id}`, { status: status }).then((response) => {
-			self.callTasks();
-		}).catch(() => {
-			self.callTasks();
-		});
-	}
-
-
-
-	handleTableChange(pagination, filters, sorter) {
-		this.models = _.sortBy(this.models, [(model)=> {
-			const value = model[sorter.columnKey];
-
-			if(value) {
-				return value.toLowerCase();
-			} else {
-				return value;
-			}
-		}]);
-
-		if(sorter.order != 'descend') {
-			this.models = this.models.reverse();
-		}
-
-		this.setState({refreshId: _.uniqueId('refresh')});
-	}
-
-	
-
-	render() {
-		const columns = [{
+		this.columns = [{
 			title: 'Name',
 			dataIndex: 'name',
 			sorter: true,
@@ -156,6 +98,97 @@ class TaskList extends Component {
 			},
 		}];
 
+		this.handleTableChange = this.handleTableChange.bind(this);
+		this.statusTask = this.statusTask.bind(this);
+		this.callTasks = this.callTasks.bind(this);
+	}
+
+
+
+	componentDidMount() {
+		this.callTasks();
+	}
+
+
+
+	callTasks() {
+		const self = this;
+		
+		axios.get(`${globals.api}/tasks`, {
+			params: {
+				filter: {
+					where: {
+						or: [
+							{status: null},
+							{status: 'pending'}
+						]
+					}
+				}
+			}
+		}).then((response) => {
+			self.models = response.data;
+			self.setState({ loading: false });
+		}).catch((error) => {
+			console.log(error)
+		});
+
+		axios.get(`${globals.api}/tasks`, {
+			params: {
+				filter: {
+					where: {
+						and: [
+							{status: {neq: null}},
+							{status: {neq: 'pending'}}
+						]
+					}
+				}
+			}
+		}).then((response) => {
+			self.otherModels = response.data;
+			self.setState({ loading: false });
+		}).catch((error) => {
+			console.log(error)
+		});
+	}
+
+
+
+	statusTask(model, status) {
+		const self = this;
+		self.setState({ loading: true });
+
+		axios.patch(`${globals.api}/tasks/${model.id}`, { status: status }).then((response) => {
+			self.callTasks();
+		}).catch(() => {
+			self.callTasks();
+		});
+	}
+
+
+
+	handleTableChange(pagination, filters, sorter) {
+		this.models = _.sortBy(this.models, [(model)=> {
+			const value = model[sorter.columnKey];
+
+			if(value) {
+				return value.toLowerCase();
+			} else {
+				return value;
+			}
+		}]);
+
+		if(sorter.order != 'descend') {
+			this.models = this.models.reverse();
+		}
+
+		this.setState({refreshId: _.uniqueId('refresh')});
+	}
+
+	
+
+	render() {
+		
+
 
 		return (<Layout>
 			<Row>
@@ -171,12 +204,32 @@ class TaskList extends Component {
 					</Button>
 				</Col>
 			</Row>
-			<Row gutter={8} type="flex" justify="space-around" align="middle">
+			<Row gutter={8}>
 				<Col xs={24} sm={24} md={24} lg={24} xl={24}>
-					<Card title='Tasks' style={{textAlign: 'center'}}>
-						<Table columns={columns}
+					<Card title='Active tasks' style={{textAlign: 'center'}}>
+						<Table
+							columns={this.columns}
 							rowKey={record => record.id}
 							dataSource={this.models}
+							pagination={10}
+							loading={this.state.loading}
+							onChange={this.handleTableChange}
+							expandedRowRender={(record) => <p className="dous-linejump">{record.description}</p>}
+							locale={{
+								filterTitle: 'Title',
+								filterConfirm: 'OK',
+								filterReset: 'Reset',
+								emptyText: 'Not results',
+							}}
+						/>
+					</Card>
+				</Col>
+				<Col xs={24} sm={24} md={24} lg={24} xl={24}>
+					<Card title='Other tasks' style={{textAlign: 'center'}}>
+						<Table
+							columns={this.columns}
+							rowKey={record => record.id}
+							dataSource={this.otherModels}
 							pagination={10}
 							loading={this.state.loading}
 							onChange={this.handleTableChange}
