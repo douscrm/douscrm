@@ -2,17 +2,19 @@ import React, {Component} from "react";
 import {Link, Redirect} from 'react-router-dom';
 import Card from '../../components/card';
 import axios from 'axios';
+import _ from 'lodash';
 import globals from '../../../globals';
 
 
 
-class TaskCreate extends Component {
+class TaskUpdate extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
 			name: '',
-			id: null
+			id: null,
+			refreshId: '0'
 		};
 
 		this.model = {};
@@ -82,11 +84,14 @@ class TaskCreate extends Component {
 					<Card title="Add task" padding={true}>
 						<form onSubmit={this.onSubmit}>
 							<label htmlFor="dous-name">Name</label>
-							<input type="text" className="form-control" id="dous-name" placeholder="Name" required value={this.model.name} onChange={(event) => { this.model.name = event.target.value; }} />
+							<input type="text" className="form-control" id="dous-name" placeholder="Name" required value={this.model.name || ''} onChange={(event) => { this.model.name = event.target.value; }} />
 							<label htmlFor="dous-enddate">End date</label>
-							<input type="date" className="form-control" id="dous-enddate" placeholder="Date" value={(this.model.endDate) ? this.model.endDate.substr(0,10) : null} onChange={(event) => { this.model.endDate = event.target.value; }} />
+							<input type="date" className="form-control" id="dous-enddate" placeholder="Date" value={(this.model.endDate) ? this.model.endDate.substr(0,10) : ''} onChange={(event) => { this.model.endDate = event.target.value; }} />
 							<label htmlFor="dous-description">Description</label>
-							<textarea className="form-control" id="dous-description" placeholder="Description" value={this.model.description} onChange={(event) => { this.model.description = event.target.value; }}></textarea>
+							<textarea className="form-control" id="dous-description" placeholder="Description" value={this.model.description} onChange={(event) => {
+									this.model.description = event.target.value;
+									this.setState({refreshId: _.uniqueId('refresh')});
+								}}></textarea>
 							<br/>
 							<button type="submit" className="btn btn-primary">Update Task</button>
 						</form>
@@ -98,4 +103,4 @@ class TaskCreate extends Component {
 }
 
 
-export default TaskCreate;
+export default TaskUpdate;
