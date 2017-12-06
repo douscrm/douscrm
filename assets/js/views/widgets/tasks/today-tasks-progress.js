@@ -69,7 +69,7 @@ class TodayTasksProgress extends Component {
 	render() {
 		return (
 			<Card loading={!this.state.loadTask} title={this.props.title || 'Today tasks'} style={{textAlign: 'center'}}>
-				<Progress type="circle" percent={this.percent} />
+				<Progress type="circle" percent={Math.round(this.percent)} />
 			</Card>
 		);
 	}

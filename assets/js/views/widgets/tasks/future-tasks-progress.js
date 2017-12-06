@@ -71,7 +71,7 @@ class FutureTasksProgress extends Component {
 	render() {
 		return (
 			<Card loading={!this.state.loadTask} title={this.props.title || 'Future tasks'} style={{textAlign: 'center'}}>
-				<Progress type="circle" percent={this.percent} />
+				<Progress type="circle" percent={Math.round(this.percent)} />
 			</Card>
 		);
 	}
