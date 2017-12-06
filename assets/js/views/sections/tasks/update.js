@@ -48,7 +48,7 @@ class TaskUpdate extends Component {
 
 		axios.patch(`${globals.api}/tasks/${self.model.id}`, self.model).then((response) => {
 			if(response.status == 200 && response.data.id) {
-				self.setState({id: response.data.id});
+				globals.history.push(`/tasks/${response.data.id}`);
 			}
 		});
 	}
@@ -80,10 +80,6 @@ class TaskUpdate extends Component {
 				sm: { span: 20 },
 			}
 		};
-
-		console.log('###')
-		console.log(this.model)
-		console.log('###')
 
 		const endDate = (this.model.endDate) ? moment(this.model.endDate) : undefined;
 
