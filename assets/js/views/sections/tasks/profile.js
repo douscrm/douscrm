@@ -63,7 +63,7 @@ class TaskProfile extends Component {
 
 		if(this.model.description) {
 			//TODO use moment
-			lines.push(<li key={`lines-${lines.length}`} className="list-group-item"><strong>Description:</strong><br/>{this.model.description}</li>);
+			lines.push(<li key={`lines-${lines.length}`} className="list-group-item dous-linejump"><strong>Description:</strong><br/>{this.model.description}</li>);
 		}
 
 
