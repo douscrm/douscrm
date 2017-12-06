@@ -93,40 +93,6 @@ class TaskCreate extends Component {
 				</Col>
 			</Row>
 		</Layout>);
-
-
-
-		return (<div className="container">
-			<div className="row mt-3">
-				<div className="col-12">
-					<nav aria-label="breadcrumb" role="navigation">
-						<ol className="breadcrumb">
-							<li className="breadcrumb-item">
-								<Link to="/">Home</Link>
-							</li>
-							<li className="breadcrumb-item">
-								<Link to="/tasks">Tasks</Link>
-							</li>
-							<li className="breadcrumb-item active">Add new task</li>
-						</ol>
-					</nav>
-				</div>
-			</div>
-			<div className="row">
-				<div className="col-12">
-					<Card title="Add task" padding={true}>
-						<form onSubmit={this.onSubmit}>
-							<label htmlFor="dous-name">Name</label>
-							<input type="text" className="form-control" id="dous-name" placeholder="Name" required value={this.model.name} onChange={(event) => { this.model.name = event.target.value; }} />
-							<label htmlFor="dous-enddate">End date</label>
-							<input type="date" className="form-control" id="dous-enddate" placeholder="Date" value={this.model.endDate} onChange={(event) => { this.model.endDate = event.target.value; }} />
-							<br/>
-							<button type="submit" className="btn btn-primary">Add Task</button>
-						</form>
-					</Card>
-				</div>
-			</div>
-		</div>);
 	}
 }
 
