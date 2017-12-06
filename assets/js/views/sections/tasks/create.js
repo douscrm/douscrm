@@ -83,7 +83,7 @@ class TaskCreate extends Component {
 								<DatePicker value={this.model.endDate} onChange={(date, datestring) => { this.changeDateValue('endDate', date); }} />
 							</Form.Item>
 							<Form.Item label="Description" {...formItemLayout}>
-								<Input.TextArea placeholder="Task description" autosize alue={this.model.description} onChange={(event) => { this.changeInputValue('description', event.target.value); }} />
+								<Input.TextArea placeholder="Task description" autosize value={this.model.description} onChange={(event) => { this.changeInputValue('description', event.target.value); }} />
 							</Form.Item>
 							<Form.Item>
 								<Button type="primary" htmlType="submit">Add Task</Button>
