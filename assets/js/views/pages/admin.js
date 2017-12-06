@@ -62,8 +62,6 @@ class Admin extends Component {
 
 
 	menuClick(options) {
-		console.log(options.key)
-		console.log(this.menuData[options.key])
 		globals.history.push(this.menuData[options.key].link);
 	}
 
