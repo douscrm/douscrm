@@ -8,7 +8,7 @@ import { Badge, Breadcrumb, Table, Layout, Row, Col, Card, Button, Icon } from '
 
 
 
-class TaskList extends Component {
+class TaskListCompleted extends Component {
 	constructor(props) {
 		super(props);
 
@@ -117,9 +117,9 @@ class TaskList extends Component {
 			params: {
 				filter: {
 					where: {
-						or: [
-							{status: null},
-							{status: 'pending'}
+						and: [
+							{status: {neq: null}},
+							{status: {neq: 'pending'}}
 						]
 					}
 				}
@@ -173,22 +173,14 @@ class TaskList extends Component {
 				<Col xs={12} sm={12} md={12} lg={12} xl={12}>
 					<Breadcrumb className="dous-breadcrumb">
 						<Breadcrumb.Item><Link to="/">Home</Link></Breadcrumb.Item>
-						<Breadcrumb.Item>Tasks</Breadcrumb.Item>
+						<Breadcrumb.Item><Link to="/tasks">Tasks</Link></Breadcrumb.Item>
+						<Breadcrumb.Item>Tasks completed</Breadcrumb.Item>
 					</Breadcrumb>
-				</Col>
-				<Col xs={12} sm={12} md={12} lg={12} xl={12} className="text-right">
-					<Button type="primary">
-						<Link to={`/tasks/completed`}><Icon type="eye" /> View completed</Link>
-					</Button>
-					&nbsp;
-					<Button type="primary">
-						<Link to={`/tasks/create`}><Icon type="plus" /> Add task</Link>
-					</Button>
 				</Col>
 			</Row>
 			<Row gutter={8}>
 				<Col xs={24} sm={24} md={24} lg={24} xl={24}>
-					<Card title='Active tasks' style={{textAlign: 'center'}}>
+					<Card title='Completed tasks' style={{textAlign: 'center'}}>
 						<Table
 							columns={this.columns}
 							rowKey={record => record.id}
@@ -212,4 +204,4 @@ class TaskList extends Component {
 }
 
 
-export default TaskList;
+export default TaskListCompleted;
