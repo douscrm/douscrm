@@ -3,7 +3,6 @@ import {Redirect, Router, Route, Switch, Link} from 'react-router-dom';
 import {isMobile} from 'react-device-detect';
 import globals from './../../globals';
 
-
 import dashboard from './../sections/dashboards/dashboard';
 import contacts from './../sections/contacts';
 import business from './../sections/business';
@@ -62,7 +61,7 @@ class Admin extends Component {
 
 
 	menuClick(options) {
-		globals.history.push(this.menuData[options.key].link);
+		globals.history.push(options.key);
 	}
 
 
@@ -79,8 +78,9 @@ class Admin extends Component {
 		let counter = 0;
 		const menuLateral = [];
 
+
 		this.menuData.forEach((item) => {
-			menuLateral.push(<Menu.Item key={counter}>
+			menuLateral.push(<Menu.Item key={item.link}>
 				<Icon><i className={`fa ${item.icon}`} /></Icon>
 				
 				<span> {item.name}</span>
@@ -93,7 +93,7 @@ class Admin extends Component {
 		return (<Layout style={{height: '100vh'}}>
 			<Sider trigger={null} collapsible collapsed={this.state.collapsed} collapsedWidth={this.state.collapsedWidth}>
 				<div className="logo" />
-				<Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} onClick={this.menuClick}>{menuLateral}</Menu>
+				<Menu theme="dark" mode="inline" defaultSelectedKeys={[`/${globals.history.location.pathname.split('/')[1]}`]} onClick={this.menuClick}>{menuLateral}</Menu>
 			</Sider>
 			<Layout>
 				<Header style={{ background: '#fff', padding: 0 }}>
@@ -136,6 +136,7 @@ class Admin extends Component {
 						<Route path="/milestones" component={milestones.list}/>
 
 						<Route path="/tasks/create" component={tasks.create}/>
+						<Route path="/tasks/completed" component={tasks.listCompleted}/>
 						<Route path="/tasks/:id/update" component={tasks.update}/>
 						<Route path="/tasks/:id" component={tasks.profile}/>
 						<Route path="/tasks" component={tasks.list}/>
